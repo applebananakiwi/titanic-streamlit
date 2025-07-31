@@ -5,7 +5,7 @@ import numpy as np
 # Load the trained model
 model = joblib.load("titanic_model.pkl")
 
-# Header image (fixed)
+# Header image (reliable link)
 st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/Titanic_side_plan.png", use_container_width=True)
 
 # Title and description
@@ -17,19 +17,14 @@ st.markdown(
     """
 )
 
-# Two-column layout for inputs
-col1, col2 = st.columns(2)
-
-with col1:
-    pclass = st.selectbox("Passenger Class", [1, 2, 3])
-    sex = st.selectbox("Sex", ["male", "female"])
-    age = st.slider("Age", 0, 80, 25)
-    sibsp = st.number_input("Number of Siblings/Spouses", 0, 10, 0)
-
-with col2:
-    parch = st.number_input("Number of Parents/Children", 0, 10, 0)
-    fare = st.number_input("Fare ($)", 0.0, 500.0, 50.0)
-    embarked = st.selectbox("Embarked", ["C", "Q", "S"])
+# Single-column layout (all inputs stacked)
+pclass = st.selectbox("Passenger Class", [1, 2, 3])
+sex = st.selectbox("Sex", ["male", "female"])
+age = st.slider("Age", 0, 80, 25)
+sibsp = st.number_input("Number of Siblings/Spouses", 0, 10, 0)
+parch = st.number_input("Number of Parents/Children", 0, 10, 0)
+fare = st.number_input("Fare ($)", 0.0, 500.0, 50.0)
+embarked = st.selectbox("Embarked", ["C", "Q", "S"])
 
 # Encode inputs
 sex = 1 if sex == "male" else 0
