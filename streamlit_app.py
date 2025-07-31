@@ -5,7 +5,7 @@ import numpy as np
 # Load the trained model
 model = joblib.load("titanic_model.pkl")
 
-# Header image (reliable link)
+# Header image
 st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/Titanic_side_plan.png", use_container_width=True)
 
 # Title and description
