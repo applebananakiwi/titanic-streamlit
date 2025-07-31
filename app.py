@@ -5,8 +5,8 @@ import numpy as np
 # Load the trained model
 model = joblib.load("titanic_model.pkl")
 
-# Header image
-st.image("https://i.imgur.com/KZsmUi2.png", use_container_width=True)
+# Header image (fixed)
+st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/Titanic_side_plan.png", use_container_width=True)
 
 # Title and description
 st.title("🌊 Titanic: Will You Survive?")
@@ -51,4 +51,4 @@ if st.button("🔹 Predict Survival"):
             "<h3 style='text-align: center; color: gray;'>💐⚰️🌸 In Loving Memory 🌸⚰️💐</h3>",
             unsafe_allow_html=True
         )
-        st.snow()  # Sad snowy effect
+        st.snow()
